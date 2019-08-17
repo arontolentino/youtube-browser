@@ -8,7 +8,7 @@
 import SearchBar from './components/SearchBar'
 
 export default {
-  name: "app",
+  name: 'app',
   components: {
     SearchBar
   }
