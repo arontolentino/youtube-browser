@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-    YouTube Browser
+    <SearchBar></SearchBar>
   </div>
 </template>
 
 <script>
-
+import SearchBar from './components/SearchBar'
 
 export default {
   name: "app",
   components: {
+    SearchBar
   }
 };
 </script>
