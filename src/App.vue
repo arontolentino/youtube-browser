@@ -5,17 +5,25 @@
 </template>
 
 <script>
+import axios from 'axios';
 import SearchBar from './components/SearchBar'
-const API_KEY = 'AIzaSyBi-y4K_lHR_gbVZY0CNicyJOla9XlLx3s';
+const API_KEY = 'AIzaSyAofqsGyAx04MDgDNF-5zqo5lYooD-UPBY';
 
 export default {
   name: 'App',
   components: {
     SearchBar
   },
-  method: {
+  methods: {
     onTermChange(searchTerm) {
-      console.log(searchTerm);
+      axios.get('https://www.googleapis.com/youtube/v3/search', {
+        params: {
+          key: API_KEY,
+          type: 'video',
+          part: 'snippet',
+          q: searchTerm
+        }
+      }).then(response => console.log(response));
     }
   }
 };
